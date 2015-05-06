@@ -1,5 +1,7 @@
 <#assign aui = PortletJspTagLibs["/META-INF/aui.tld"] />
 <#assign liferay_ui = PortletJspTagLibs["/META-INF/liferay-ui.tld"] />
+<#assign portlet = PortletJspTagLibs["/WEB-INF/tld/liferay-portlet.tld"]>
+<#assign namespace><@portlet.namespace/></#assign>
 
 <#setting number_format="computer">
 
@@ -16,9 +18,34 @@
 		<@liferay_ui["message"] arguments=enableLocationLabel key="user-groups-can-be-managed-in-x" />
 	</div>
 <#else>
-	<@aui["select"] label="" name="userGroupId">
-		<#list userGroups as userGroup>
-			<@aui["option"] label="${userGroup.getName()}" selected=(userGroup.getUserGroupId() == userGroupId) value=userGroup.getUserGroupId() />
-		</#list>
-	</@>
+    <@aui["input"] type="hidden" name="userGroupId" value="${userGroupId}"/>
+    <div id="${namespace}userGroupDisplayName">${(userGroup.name)!""}</div>
+    <div id="${namespace}userGroupDisplayDescription" class="field-description">${(userGroup.description)!""}</div>
+    <@aui["button"] name="selectGroup" value="select"/>
 </#if>
+
+<@aui.script use="aui-base,escape">
+  var groups = JSON.parse('${groupDescription}');
+  A.one('#${namespace}selectGroup').on(
+    'click',
+    function(event) {
+      Liferay.Util.selectEntity({
+        dialog: {
+          constrain: true,
+          destroyOnHide: true,
+          modal: true,
+          width: 680
+        },
+        id: '${namespace}selectUserGroup',
+        title: '<@liferay_ui["message"] arguments="user-group" key="select-x" />',
+        uri: '${selectUserGroupURL}'
+      },
+      function(event) {
+        A.one('#${namespace}userGroupDisplayName').setContent(event.usergroupname);
+        A.one('#${namespace}userGroupDisplayDescription').setContent(groups[""+event.usergroupid]);
+        A.one('#${namespace}userGroupId').set('value', event.usergroupid);
+        console.log(event);
+      });
+    }
+  );
+</@>

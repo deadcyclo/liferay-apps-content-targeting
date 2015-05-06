@@ -38,15 +38,23 @@ import java.util.Map;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletURL;
+import javax.portlet.WindowState;
 
 /**
  * @author Julio Camarero
+ * @author Brendan Johan Lee
  */
 public class ContentTargetingContextUtil {
 
+    public static String getControlPanelPortletURL(
+            Map<String, Object> context, String portletId,
+            Map<String, String> params) {
+        return getControlPanelPortletURL(context, portletId, params, null);
+    }
+
 	public static String getControlPanelPortletURL(
 		Map<String, Object> context, String portletId,
-		Map<String, String> params) {
+		Map<String, String> params, WindowState windowState) {
 
 		LiferayPortletResponse liferayPortletResponse =
 			(LiferayPortletResponse)context.get("renderResponse");
@@ -64,6 +72,10 @@ public class ContentTargetingContextUtil {
 					portletURL.setParameter(param, params.get(param));
 				}
 			}
+
+            if (windowState!=null) {
+                portletURL.setWindowState(windowState);
+            }
 
 			return HttpUtil.removeParameter(
 				portletURL.toString(), "controlPanelCategory");

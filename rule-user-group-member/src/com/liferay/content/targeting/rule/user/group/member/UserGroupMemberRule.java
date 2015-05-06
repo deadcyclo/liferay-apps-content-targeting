@@ -22,36 +22,38 @@ import com.liferay.content.targeting.model.UserSegment;
 import com.liferay.content.targeting.rule.categories.UserAttributesRuleCategory;
 import com.liferay.content.targeting.util.ContentTargetingContextUtil;
 import com.liferay.content.targeting.util.PortletKeys;
-import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.lar.PortletDataContext;
 import com.liferay.portal.kernel.lar.PortletDataException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.portlet.LiferayWindowState;
 import com.liferay.portal.kernel.util.Constants;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.xml.Element;
 import com.liferay.portal.model.Company;
+import com.liferay.portal.model.User;
 import com.liferay.portal.model.UserGroup;
 import com.liferay.portal.service.UserGroupLocalServiceUtil;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
-import javax.portlet.PortletRequest;
-import javax.portlet.PortletResponse;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 
+import javax.portlet.PortletRequest;
+import javax.portlet.PortletResponse;
+import javax.portlet.RenderResponse;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
+
 /**
  * @author Eudaldo Alonso
+ * @author Brendan Johan Lee
  */
 @Component(immediate = true, service = Rule.class)
 public class UserGroupMemberRule extends BaseRule {
+    private static final Log LOG = LogFactoryUtil.getLog(UserGroupMemberRule.class);
 
 	@Activate
 	@Override
@@ -188,15 +190,40 @@ public class UserGroupMemberRule extends BaseRule {
 		Company company = (Company)context.get("company");
 
 		List<UserGroup> userGroups = new ArrayList<UserGroup>();
-
+        UserGroup userGroup = null;
+        User user = (User)context.get("user"); /* So we don't get nullpointer, but will not be able to choose groups user is member of */
+        RenderResponse renderResponse = (RenderResponse)context.get("renderResponse");
 		try {
 			userGroups = UserGroupLocalServiceUtil.getUserGroups(
 				company.getCompanyId());
+            userGroup = UserGroupLocalServiceUtil.getUserGroup(userGroupId);
+            user = company.getDefaultUser();
 		}
-		catch (SystemException e) {
+		catch (Exception e) {
+            LOG.warn(e.getMessage());
 		}
 
-		context.put("userGroups", userGroups);
+        JSONObject groups = JSONFactoryUtil.createJSONObject();
+
+        Iterator<UserGroup> iterator = userGroups.iterator();
+        while (iterator.hasNext()) {
+            UserGroup ug = iterator.next();
+            groups.put(String.valueOf(ug.getUserGroupId()), ug.getDescription());
+        }
+
+        context.put("userGroup", userGroup);
+        context.put("userGroups", userGroups);
+        context.put("groupDescription", groups.toString());
+
+        HashMap<String, String> selectUserGroupURLParams = new HashMap<String, String>();
+        selectUserGroupURLParams.put("struts_action", "/user_groups_admin/select_user_group");
+        selectUserGroupURLParams.put("p_u_i_d", String.valueOf(user.getUserId()));
+        selectUserGroupURLParams.put("eventName", renderResponse.getNamespace()+"selectUserGroup");
+
+        context.put(
+                "selectUserGroupURL",
+                ContentTargetingContextUtil.getControlPanelPortletURL(
+                        context, PortletKeys.USER_GROUPS_ADMIN, selectUserGroupURLParams, LiferayWindowState.POP_UP));
 
 		if ((userGroups == null) || userGroups.isEmpty()) {
 			boolean hasUserGroupsAdminViewPermission =
