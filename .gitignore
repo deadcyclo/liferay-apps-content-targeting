@@ -24,3 +24,6 @@ sonar.*.properties
 .idea/dataSources.*
 
 .sonar
+
+*.iml
+atlassian-ide-plugin.xml

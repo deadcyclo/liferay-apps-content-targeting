@@ -718,9 +718,7 @@ public class UserSegmentModelImpl extends BaseModelImpl<UserSegment>
 			return StringPool.BLANK;
 		}
 
-		Locale defaultLocale = LocaleUtil.getSiteDefault();
-
-		return LocalizationUtil.getDefaultLanguageId(xml, defaultLocale);
+		return LocalizationUtil.getDefaultLanguageId(xml);
 	}
 
 	@Override
@@ -732,7 +730,7 @@ public class UserSegmentModelImpl extends BaseModelImpl<UserSegment>
 	@SuppressWarnings("unused")
 	public void prepareLocalizedFieldsForImport(Locale defaultImportLocale)
 		throws LocaleException {
-		Locale defaultLocale = LocaleUtil.getSiteDefault();
+		Locale defaultLocale = LocaleUtil.getDefault();
 
 		String modelDefaultLanguageId = getDefaultLanguageId();
 
