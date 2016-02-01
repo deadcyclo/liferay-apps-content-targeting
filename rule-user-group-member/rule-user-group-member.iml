@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":apps:content-targeting:rule-user-group-member" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="liferay-plugins.apps.content-targeting" external.system.module.version="1.0.0" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="IvyIDEA" name="IvyIDEA">
       <configuration ivyFile="$MODULE_DIR$/ivy.xml" useProjectSettings="false" useCustomIvySettings="true" ivySettingsFile="$MODULE_DIR$/../../../ivy-settings.xml" onlyResolveSelectedConfigs="false">
@@ -10,70 +10,235 @@
         </propertiesSettings>
       </configuration>
     </facet>
+    <facet type="web" name="Web Gradle : rule-user-group-member-1.0.0.war">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/docroot" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/build/classes/main" />
+    <output-test url="file://$MODULE_DIR$/build/classes/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="anonymous-users-api" />
-    <orderEntry type="module" module-name="content-targeting-api" />
-    <orderEntry type="library" name="portal" level="project" />
-    <orderEntry type="library" name="portal-impl" level="project" />
-    <orderEntry type="library" name="reference" level="project" />
-    <orderEntry type="module-library">
-      <library name="IvyIDEA">
+    <orderEntry type="module" module-name="portal-compat-shared" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: net.sf:jargs:1.0">
         <CLASSES>
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.osgi/org.osgi.core/jars/org.osgi.core-5.0.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/jars/junit-4.11.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.mockito/mockito-all/jars/mockito-all-1.9.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-api-mockito/jars/powermock-api-mockito-1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-api-support/jars/powermock-api-support-1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-core/jars/powermock-core-1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-reflect/jars/powermock-reflect-1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.objenesis/objenesis/jars/objenesis-1.2.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.17.1-GA.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-module-junit4/jars/powermock-module-junit4-1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-module-junit4-common/jars/powermock-module-junit4-common-1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.osgi/org.osgi.enterprise/jars/org.osgi.enterprise-5.0.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/com.liferay/com.liferay.osgi.util/jars/com.liferay.osgi.util-1.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf/jargs/1.0/8cbf18b0411477a8ae6ce14d610ee64c65b21474/jargs-1.0.jar!/" />
         </CLASSES>
-        <JAVADOC>
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.osgi/org.osgi.core/javadocs/org.osgi.core-5.0.0-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/javadocs/junit-4.11-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/javadocs/hamcrest-core-1.3-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.mockito/mockito-all/javadocs/mockito-all-1.9.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-api-mockito/javadocs/powermock-api-mockito-1.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-api-support/javadocs/powermock-api-support-1.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-core/javadocs/powermock-core-1.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-reflect/javadocs/powermock-reflect-1.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.objenesis/objenesis/javadocs/objenesis-1.2-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-module-junit4/javadocs/powermock-module-junit4-1.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-module-junit4-common/javadocs/powermock-module-junit4-common-1.5-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.osgi/org.osgi.enterprise/javadocs/org.osgi.enterprise-5.0.0-javadoc.jar!/" />
-        </JAVADOC>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: mysql:mysql-connector-java:5.1.23">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.23/c264e2114579474d13dd808a510fc74e762dda8c/mysql-connector-java-5.1.23.jar!/" />
+        </CLASSES>
+        <JAVADOC />
         <SOURCES>
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.osgi/org.osgi.core/sources/org.osgi.core-5.0.0-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/sources/junit-4.11-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.mockito/mockito-all/sources/mockito-all-1.9.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-api-mockito/sources/powermock-api-mockito-1.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-api-support/sources/powermock-api-support-1.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-core/sources/powermock-core-1.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-reflect/sources/powermock-reflect-1.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.objenesis/objenesis/sources/objenesis-1.2-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.javassist/javassist/sources/javassist-3.17.1-GA-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-module-junit4/sources/powermock-module-junit4-1.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.powermock/powermock-module-junit4-common/sources/powermock-module-junit4-common-1.5-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.osgi/org.osgi.enterprise/sources/org.osgi.enterprise-5.0.0-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/com.liferay/com.liferay.osgi.util/sources/com.liferay.osgi.util-1.0.1-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/sources/hamcrest-core-1.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.23/beb70ff7f2252712e419f762cabca8ee3eb1dfe1/mysql-connector-java-5.1.23-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: com.liferay.portal:util-bridges:7.0.0-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liferay.portal/util-bridges/7.0.0-SNAPSHOT/cf55b7f41761ab1025b59fdc7696ae05d003b6b2/util-bridges-7.0.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: org.eclipse.persistence:javax.persistence:2.0.0">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/javax.persistence/2.0.0/bff9b1d9de629095001f1a4e77f450b2d6487b07/javax.persistence-2.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: com.liferay.portal:util-java:7.0.0-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liferay.portal/util-java/7.0.0-SNAPSHOT/6853525a17ecb2b58cc6f5a7bbff1c329da4522d/util-java-7.0.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: net.sourceforge.jtds:jtds:1.2.6">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.jtds/jtds/1.2.6/ab0d6b081da65ab49e14355957c19d4b0fb06222/jtds-1.2.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.jtds/jtds/1.2.6/cc6e19d0e4d67f117cdfde0638972982448b743c/jtds-1.2.6-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: com.liferay.portal:util-taglib:7.0.0-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liferay.portal/util-taglib/7.0.0-SNAPSHOT/382855079e0666609cd6ee03f278641205682aec/util-taglib-7.0.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.activation:activation:1.1">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/3697e9f67a2ed7ac5f589cff30f21173299440/activation-1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: commons-logging:commons-logging:1.1.1">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: postgresql:postgresql:9.2-1002.jdbc4">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.2-1002.jdbc4/65b528162f7cf20b4d44bc31a446724e217ba35b/postgresql-9.2-1002.jdbc4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: log4j:log4j:1.2.16">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/bf945d1dc995be7fe64923625f842fbb6bf443be/log4j-1.2.16-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: biz.aQute.bnd:biz.aQute.bnd:2.4.1">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/biz.aQute.bnd/biz.aQute.bnd/2.4.1/bd6bf6435d4f73928d74a4d997c6578e6d7f7777/biz.aQute.bnd-2.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/biz.aQute.bnd/biz.aQute.bnd/2.4.1/275ea1af0bd0f9a51ab2839b30456fd7bb899698/biz.aQute.bnd-2.4.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: com.liferay.portal:portal-service:7.0.0-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liferay.portal/portal-service/7.0.0-SNAPSHOT/37b6d439c65162b40363447be70cc64023507976/portal-service-7.0.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: hsqldb:hsqldb:1.8.0.7">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/hsqldb/hsqldb/1.8.0.7/20554954120b3cc9f08804524ec90113a73f3015/hsqldb-1.8.0.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.ccpp:ccpp:1.0">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.ccpp/ccpp/1.0/c3d4ca935e954140e325c305126ca1866d6786dd/ccpp-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.jms:jms:1.1">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.jms/jms/1.1/5e106d07e523fb6d40cf086b9b413268f6302f26/jms-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.mail:mail:1.4">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4/1aa1579ae5ecd41920c4f355b0a9ef40b68315dd/mail-1.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4/fdd508f19a5075196138c94b341120e917c10e8a/mail-1.4-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.portlet:portlet-api:2.0">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.portlet/portlet-api/2.0/1cd72f2a37fcf8ab9893a9468d7ba71c85fe2653/portlet-api-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.portlet/portlet-api/2.0/aa3977c82050c29bb3577fc98c428d61ec187503/portlet-api-2.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.servlet:javax.servlet-api:3.0.1">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/6bf0ebb7efd993e222fc1112377b5e92a13b38dd/javax.servlet-api-3.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/1952f91d84016a39e31346c9d18bd8c9c4a128a/javax.servlet-api-3.0.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: javax.servlet.jsp:jsp-api:2.1">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet.jsp/jsp-api/2.1/63f943103f250ef1f3a4d5e94d145a0f961f5316/jsp-api-2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet.jsp/jsp-api/2.1/1c9e754118cf8d3d85b6b1257fb6fb0f914d08c6/jsp-api-2.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
   </component>
 </module>
-

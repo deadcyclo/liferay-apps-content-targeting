@@ -208,7 +208,7 @@ public class UserGroupMemberRule extends BaseRule {
         Iterator<UserGroup> iterator = userGroups.iterator();
         while (iterator.hasNext()) {
             UserGroup ug = iterator.next();
-            groups.put(String.valueOf(ug.getUserGroupId()), ug.getDescription());
+            groups.put(String.valueOf(ug.getUserGroupId()), ug.getDescription().replaceAll("'",""));
         }
 
         context.put("userGroup", userGroup);
