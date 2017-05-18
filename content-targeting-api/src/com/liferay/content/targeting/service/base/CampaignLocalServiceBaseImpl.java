@@ -372,8 +372,8 @@ public abstract class CampaignLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 */
 	@Override
 	public void addUserSegmentCampaigns(long userSegmentId,
-		List<Campaign> Campaigns) throws SystemException {
-		userSegmentPersistence.addCampaigns(userSegmentId, Campaigns);
+		List<Campaign> campaigns) throws SystemException {
+		userSegmentPersistence.addCampaigns(userSegmentId, campaigns);
 	}
 
 	/**
@@ -417,8 +417,8 @@ public abstract class CampaignLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 */
 	@Override
 	public void deleteUserSegmentCampaigns(long userSegmentId,
-		List<Campaign> Campaigns) throws SystemException {
-		userSegmentPersistence.removeCampaigns(userSegmentId, Campaigns);
+		List<Campaign> campaigns) throws SystemException {
+		userSegmentPersistence.removeCampaigns(userSegmentId, campaigns);
 	}
 
 	/**

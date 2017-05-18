@@ -344,9 +344,9 @@ public class UserSegmentLocalServiceUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static void addCampaignUserSegments(long campaignId,
-		java.util.List<com.liferay.content.targeting.model.UserSegment> UserSegments)
+		java.util.List<com.liferay.content.targeting.model.UserSegment> userSegments)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		getService().addCampaignUserSegments(campaignId, UserSegments);
+		getService().addCampaignUserSegments(campaignId, userSegments);
 	}
 
 	/**
@@ -388,9 +388,9 @@ public class UserSegmentLocalServiceUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static void deleteCampaignUserSegments(long campaignId,
-		java.util.List<com.liferay.content.targeting.model.UserSegment> UserSegments)
+		java.util.List<com.liferay.content.targeting.model.UserSegment> userSegments)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		getService().deleteCampaignUserSegments(campaignId, UserSegments);
+		getService().deleteCampaignUserSegments(campaignId, userSegments);
 	}
 
 	/**

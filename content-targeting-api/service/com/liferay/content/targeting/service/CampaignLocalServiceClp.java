@@ -1014,7 +1014,7 @@ public class CampaignLocalServiceClp implements CampaignLocalService {
 
 	@Override
 	public void addUserSegmentCampaigns(long userSegmentId,
-		java.util.List<com.liferay.content.targeting.model.Campaign> Campaigns)
+		java.util.List<com.liferay.content.targeting.model.Campaign> campaigns)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		try {
 			_invokableLocalService.invokeMethod(_methodName23,
@@ -1022,7 +1022,7 @@ public class CampaignLocalServiceClp implements CampaignLocalService {
 				new Object[] {
 					userSegmentId,
 					
-				ClpSerializer.translateInput(Campaigns)
+				ClpSerializer.translateInput(campaigns)
 				});
 		}
 		catch (Throwable t) {
@@ -1153,7 +1153,7 @@ public class CampaignLocalServiceClp implements CampaignLocalService {
 
 	@Override
 	public void deleteUserSegmentCampaigns(long userSegmentId,
-		java.util.List<com.liferay.content.targeting.model.Campaign> Campaigns)
+		java.util.List<com.liferay.content.targeting.model.Campaign> campaigns)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		try {
 			_invokableLocalService.invokeMethod(_methodName28,
@@ -1161,7 +1161,7 @@ public class CampaignLocalServiceClp implements CampaignLocalService {
 				new Object[] {
 					userSegmentId,
 					
-				ClpSerializer.translateInput(Campaigns)
+				ClpSerializer.translateInput(campaigns)
 				});
 		}
 		catch (Throwable t) {

@@ -316,7 +316,7 @@ public interface CampaignLocalService extends BaseLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	public void addUserSegmentCampaigns(long userSegmentId,
-		java.util.List<com.liferay.content.targeting.model.Campaign> Campaigns)
+		java.util.List<com.liferay.content.targeting.model.Campaign> campaigns)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
@@ -349,7 +349,7 @@ public interface CampaignLocalService extends BaseLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	public void deleteUserSegmentCampaigns(long userSegmentId,
-		java.util.List<com.liferay.content.targeting.model.Campaign> Campaigns)
+		java.util.List<com.liferay.content.targeting.model.Campaign> campaigns)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

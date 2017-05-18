@@ -359,9 +359,9 @@ public class CampaignLocalServiceWrapper implements CampaignLocalService,
 	*/
 	@Override
 	public void addUserSegmentCampaigns(long userSegmentId,
-		java.util.List<com.liferay.content.targeting.model.Campaign> Campaigns)
+		java.util.List<com.liferay.content.targeting.model.Campaign> campaigns)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		_campaignLocalService.addUserSegmentCampaigns(userSegmentId, Campaigns);
+		_campaignLocalService.addUserSegmentCampaigns(userSegmentId, campaigns);
 	}
 
 	/**
@@ -409,10 +409,10 @@ public class CampaignLocalServiceWrapper implements CampaignLocalService,
 	*/
 	@Override
 	public void deleteUserSegmentCampaigns(long userSegmentId,
-		java.util.List<com.liferay.content.targeting.model.Campaign> Campaigns)
+		java.util.List<com.liferay.content.targeting.model.Campaign> campaigns)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		_campaignLocalService.deleteUserSegmentCampaigns(userSegmentId,
-			Campaigns);
+			campaigns);
 	}
 
 	/**
