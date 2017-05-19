@@ -34,11 +34,17 @@ import com.liferay.portal.model.GroupConstants;
 import com.liferay.portal.service.GroupLocalServiceUtil;
 import com.liferay.portal.service.GroupServiceUtil;
 import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.kernel.workflow.WorkflowConstants;
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
+import com.liferay.portal.util.comparator.UserLastNameComparator;
+import com.liferay.portal.util.PortalUtil;
+import com.liferay.portal.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.LinkedHashMap;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletResponse;
@@ -75,8 +81,29 @@ public class SiteMemberRule extends BaseRule {
 
 		long siteId = GetterUtil.getLong(ruleInstance.getTypeSettings());
 
-		return UserLocalServiceUtil.hasGroupUser(
-			siteId, anonymousUser.getUserId());
+		//return UserLocalServiceUtil.hasGroupUser(siteId, anonymousUser.getUserId());
+
+		if (UserLocalServiceUtil.hasGroupUser(siteId, anonymousUser.getUserId())) {
+			return true;
+		}
+
+		LinkedHashMap<String, Object> params = new LinkedHashMap<String, Object>();
+		params.put("inherit", Boolean.TRUE);
+		params.put("usersGroups", siteId);
+
+		List<User> userList = UserLocalServiceUtil.search(PortalUtil.getCompanyId(request), "", WorkflowConstants.STATUS_APPROVED, params, QueryUtil.ALL_POS,
+				QueryUtil.ALL_POS, new UserLastNameComparator(true));
+
+		for (User user : userList) {
+			if (user.getUserId() == anonymousUser.getUserId()) {
+				return true;
+			}
+		}
+		return false;
+
+		// Nasty workaround because
+		//return GroupLocalServiceUtil.hasUserGroup(anonymousUser.getUserId(), siteId, true);
+		// fails on postgredatabase (reported to liferay)
 	}
 
 	@Override
