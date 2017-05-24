@@ -81,29 +81,7 @@ public class SiteMemberRule extends BaseRule {
 
 		long siteId = GetterUtil.getLong(ruleInstance.getTypeSettings());
 
-		//return UserLocalServiceUtil.hasGroupUser(siteId, anonymousUser.getUserId());
-
-		if (UserLocalServiceUtil.hasGroupUser(siteId, anonymousUser.getUserId())) {
-			return true;
-		}
-
-		LinkedHashMap<String, Object> params = new LinkedHashMap<String, Object>();
-		params.put("inherit", Boolean.TRUE);
-		params.put("usersGroups", siteId);
-
-		List<User> userList = UserLocalServiceUtil.search(PortalUtil.getCompanyId(request), "", WorkflowConstants.STATUS_APPROVED, params, QueryUtil.ALL_POS,
-				QueryUtil.ALL_POS, new UserLastNameComparator(true));
-
-		for (User user : userList) {
-			if (user.getUserId() == anonymousUser.getUserId()) {
-				return true;
-			}
-		}
-		return false;
-
-		// Nasty workaround because
-		//return GroupLocalServiceUtil.hasUserGroup(anonymousUser.getUserId(), siteId, true);
-		// fails on postgredatabase (reported to liferay)
+		return GroupLocalServiceUtil.hasUserGroup(anonymousUser.getUserId(), siteId, true);
 	}
 
 	@Override
